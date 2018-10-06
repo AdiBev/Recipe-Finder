@@ -13,7 +13,6 @@ class RecipeInput extends Component {
 
   onInputChange(event) {
     this.setState({ term: event.target.value });
-    console.log(this.state);
   }
 
   onFormSubmit(event) {
