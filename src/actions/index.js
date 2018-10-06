@@ -49,7 +49,8 @@ export function foundRecipes() {
 
 //this is a redux-thunk
 export function getRecipe(ingredient) {
-  const url = `${ROOT_URL}&q=${ingredient}&count=50`;
+  const proxy = "https://cors-anywhere.herokuapp.com/";
+  const url = `${proxy}${ROOT_URL}&q=${ingredient}&count=50`;
   return dispatch => {
     dispatch(fetchRecipes());
     console.log("Fetching true");
@@ -58,20 +59,17 @@ export function getRecipe(ingredient) {
       .then(response => {
         if (response.data.count === 0) {
           //Flag when no recipes found
-
           dispatch(noRecipes());
-          console.log("Sorry no recipes found!");
         } else {
-          //Flag for call when its made
+          //Flag when call is success
           dispatch(recieveRecipes(response));
+          //flag when recipes is found
           dispatch(foundRecipes());
-          console.log(response);
         }
       })
       .catch(error => {
         //Flag for error while fetching
         dispatch(errorFetching(error));
-        console.log(error);
       });
   };
 }
