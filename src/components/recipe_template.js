@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
-export class RecipeTemplate extends Component {
+export class RecipesTemplate extends Component {
   renderRecipe = recipeData => {
     if (recipeData.error === "limit") {
       return (
@@ -10,23 +10,31 @@ export class RecipeTemplate extends Component {
       );
     } else
       return recipeData.recipes.map(recipeName => {
-        const rId = recipeName.recipe_id;
+        const {
+          recipe_id,
+          source_url,
+          image_url,
+          title,
+          publisher,
+          social_rank
+        } = recipeName;
         return (
-          <div className="container" key={rId}>
+          <div className="container template" key={recipe_id}>
             <div className="row">
               <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <a href={recipeName.source_url} target="_blank">
+                <a href={source_url} target="_blank">
                   <img
-                    src={recipeName.image_url}
+                    src={image_url}
                     className="mx-auto d-block img-fluid img-thumbnail"
-                    alt={recipeName.title}
+                    alt={title}
                   />
                   <span>
-                    <h3>{recipeName.title}</h3>
+                    <h3>{title}</h3>
                   </span>
                 </a>
                 <span>
-                  <h3>{recipeName.publisher}</h3>
+                  <h3>Publisher: {publisher}</h3>
+                  <h3>Rank: {Math.floor(social_rank)}</h3>
                 </span>
               </div>
             </div>
@@ -37,9 +45,11 @@ export class RecipeTemplate extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        {this.props.recipes.map(this.renderRecipe)}
-      </React.Fragment>
+      <Fragment>
+        {this.props.recipes
+          ? this.props.recipes.map(this.renderRecipe)
+          : this.props.trendingRecipes.map(this.renderRecipe)}
+      </Fragment>
     );
   }
 }
