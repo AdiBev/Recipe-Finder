@@ -32,7 +32,6 @@ img {
   max-width: 70%;
   margin: 0 auto;
   margin-top: 20px;
-
 }
 
 input {
@@ -62,23 +61,12 @@ input[type="text"] {
   border-color: #faec4d;
 }
 
-/* Error message styles */
-.error {
-  text-align: center;
-  margin-top: 10px;
-  color: #ff5805;
-}
-
 /* logo styles */
-.logo {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
 .logo a {
   font-size: 25px;
   color: #ff7f40;
 }
+
 /* Media queries */
 @media only screen and (min-width: 800px) {
   .container {
@@ -88,9 +76,7 @@ input[type="text"] {
     position: relative;
     left: 100px;
   }
-  .link {
-    font-size: 28px;
-  }
+
 }
 
 @media only screen and (min-width: 500px) and (max-width: 799px) {

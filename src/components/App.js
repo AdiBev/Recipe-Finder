@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Router, Route } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import history from "../history";
 
 import RecipeInput from "../containers/recipe_input";
@@ -10,10 +10,17 @@ class App extends Component {
     return (
       <div>
         <Router history={history}>
-          <div>
+          <Switch>
             <Route exact path="/" component={RecipeInput} />
             <Route path="/:path(recipes|error)" component={RecipesList} />
-          </div>
+            <Route
+              render={() => (
+                <h4 className="text-danger text-xs-center">
+                  Sorry page not found
+                </h4>
+              )}
+            />
+          </Switch>
         </Router>
       </div>
     );

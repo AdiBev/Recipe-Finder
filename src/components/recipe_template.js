@@ -4,8 +4,8 @@ export class RecipesTemplate extends Component {
   renderRecipe = recipeData => {
     if (recipeData.error === "limit") {
       return (
-        <div className="container text-warning text-center">
-          Sorry API call limit reached
+        <div className="text-danger text-xs-center">
+          <h4>Sorry API call limit reached</h4>
         </div>
       );
     } else

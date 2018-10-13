@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 
 import { ErrorHandlerRecipes } from "../components/errorHandler_recipes";
 import { Spinner } from "../components/spinner";
@@ -21,7 +20,7 @@ class RecipesList extends Component {
         {fetchRecipes && !noRecipes && <Spinner />}
 
         {noRecipes ? (
-          <div className="error">Sorry no recipes found!</div>
+          <div className="text-danger text-xs-center">Sorry no recipes found!</div>
         ) : (
           <ErrorHandlerRecipes {...this.props} />
         )}
