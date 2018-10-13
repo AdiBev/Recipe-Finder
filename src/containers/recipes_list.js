@@ -7,10 +7,6 @@ import { Logo } from "../components/logo";
 import RecipeInput from "./recipe_input";
 
 class RecipesList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { hideWelcomeMsg: true };
-  }
   render() {
     const { fetchRecipes, noRecipes } = this.props;
     return (
@@ -20,7 +16,9 @@ class RecipesList extends Component {
         {fetchRecipes && !noRecipes && <Spinner />}
 
         {noRecipes ? (
-          <div className="text-danger text-xs-center">Sorry no recipes found!</div>
+          <div className="text-danger text-xs-center">
+            Sorry no recipes found!
+          </div>
         ) : (
           <ErrorHandlerRecipes {...this.props} />
         )}

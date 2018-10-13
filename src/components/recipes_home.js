@@ -3,13 +3,10 @@ import React, { Component, Fragment } from "react";
 import { TrendingRecipes } from "./trending_recipes";
 
 export class RecipesHome extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isToggleOn: true,
-      showRecipes: false
-    };
-  }
+  state = {
+    isToggleOn: true,
+    showRecipes: false
+  };
 
   handleClick(e) {
     e.preventDefault();
