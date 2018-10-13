@@ -1,8 +1,8 @@
 import axios from "axios";
 
-import { API_KEY2, proxy1 } from "../config/config";
+import { API_KEY, proxy1 } from "../config/config";
 import history from "../history";
-const ROOT_URL = `https://food2fork.com/api/search?key=${API_KEY2}`;
+const ROOT_URL = `https://food2fork.com/api/search?key=${API_KEY}`;
 
 export const FETCH_RECIPES = "FETCH_RECIPES";
 export const RECIEVE_RECIPES = "RECIEVE_RECIPES";
