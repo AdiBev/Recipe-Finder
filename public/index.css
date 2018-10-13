@@ -3,17 +3,15 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  color: #c94d34;
+  color: #7e738e;
   font-size: 18px;
-  background: url("bread.jpg");
-  background-size: cover;
-  position: absolute;
+  background-color: #c5f7d1;
 }
 
 .container {
-  background: #2b303a;
+  background: #fffb85;
   max-width: 450px;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 h3 {
@@ -33,14 +31,54 @@ img {
 .input-group {
   max-width: 70%;
   margin: 0 auto;
+  margin-top: 20px;
+
 }
 
+input {
+  background-color: #fff4c6 !important;
+}
+
+.btn {
+  background-color: #f9dd68 !important;
+}
 input[type="text"] {
   display: block;
   margin: 0 auto;
   max-width: 50%;
 }
 
+.intro {
+  position: relative;
+  top: 15px;
+  margin: auto;
+  text-align: center;
+}
+
+.intro button {
+  background-color: rgb(22, 116, 159);
+  border-radius: 5px;
+  background-color: #f9dd68;
+  border-color: #faec4d;
+}
+
+/* Error message styles */
+.error {
+  text-align: center;
+  margin-top: 10px;
+  color: #ff5805;
+}
+
+/* logo styles */
+.logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo a {
+  font-size: 25px;
+  color: #ff7f40;
+}
 /* Media queries */
 @media only screen and (min-width: 800px) {
   .container {
@@ -49,6 +87,9 @@ input[type="text"] {
     margin-left: 30px;
     position: relative;
     left: 100px;
+  }
+  .link {
+    font-size: 28px;
   }
 }
 

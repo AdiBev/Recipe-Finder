@@ -1,15 +1,12 @@
 import React from "react";
 
-import { RenderRecipes } from "./render_recipes";
+import { RecipesTemplate } from "./recipe_template";
 
 export const ErrorHandlerRecipes = props => {
   return (
     <div>
-      {props.error ? (
-        <div className="container text-danger text-center mx-auto">{props.error}</div>
-      ) : (
-        <RenderRecipes {...props}/>
-      )}
+      {props.error && <div className="error">{props.error}</div>}
+      {props.recipes && <RecipesTemplate {...props} />}
     </div>
   );
 };

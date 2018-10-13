@@ -1,17 +1,27 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { ErrorHandlerRecipes } from "../components/errorHandler_recipes";
-
+import { Spinner } from "../components/spinner";
+import { Logo } from "../components/logo";
+import RecipeInput from "./recipe_input";
 
 class RecipesList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hideWelcomeMsg: true };
+  }
   render() {
+    const { fetchRecipes, noRecipes } = this.props;
     return (
       <div>
-        {this.props.noRecipes ? (
-          <div className="container text-warning text-center mx-auto">
-            Sorry no recipes found
-          </div>
+        <Logo />
+        <RecipeInput {...this.state} />
+        {fetchRecipes && !noRecipes && <Spinner />}
+
+        {noRecipes ? (
+          <div className="error">Sorry no recipes found!</div>
         ) : (
           <ErrorHandlerRecipes {...this.props} />
         )}
@@ -20,8 +30,8 @@ class RecipesList extends Component {
   }
 }
 
-function mapStateToProps({ error, noRecipes, recipes }) {
-  return { error, noRecipes, recipes };
+function mapStateToProps({ error, noRecipes, recipes, fetchRecipes }) {
+  return { error, noRecipes, recipes, fetchRecipes };
 }
 
 export default connect(mapStateToProps)(RecipesList);
