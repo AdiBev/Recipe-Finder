@@ -40,7 +40,8 @@ class RecipeInput extends Component {
             </button>
           </span>
         </form>
-        {!recipes && !noRecipes && <RecipesHome />}
+        {!recipes &&
+          !noRecipes && <RecipesHome />}
       </Fragment>
     );
   }
