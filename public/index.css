@@ -1,11 +1,17 @@
+/*for logo */
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Libre+Baskerville|Pacifico");
+
+/* for body */
+@import url("https://fonts.googleapis.com/css?family=Arbutus+Slab|Comfortaa|Libre+Baskerville|Pacifico");
+
 /* General Styles */
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  color: #7e738e;
+  font-family: "Libre Baskerville", serif;
+  color: #041342;
   font-size: 18px;
-  background-color: #c5f7d1;
+  background-color: #f26666;
 }
 
 .container {
@@ -38,9 +44,6 @@ input {
   background-color: #fff4c6 !important;
 }
 
-.btn {
-  background-color: #f9dd68 !important;
-}
 input[type="text"] {
   display: block;
   margin: 0 auto;
@@ -54,17 +57,11 @@ input[type="text"] {
   text-align: center;
 }
 
-.intro button {
-  background-color: rgb(22, 116, 159);
-  border-radius: 5px;
-  background-color: #f9dd68;
-  border-color: #faec4d;
-}
-
 /* logo styles */
 .logo a {
   font-size: 25px;
-  color: #ff7f40;
+  color: #041342;
+  font-family: "Pacifico", cursive;
 }
 
 /* Media queries */
@@ -76,9 +73,14 @@ input[type="text"] {
     position: relative;
     left: 100px;
   }
-
 }
 
+/*  edamam badge styles */
+#edamam-badge {
+  text-align: center;
+}
+
+/*Media queries */
 @media only screen and (min-width: 500px) and (max-width: 799px) {
   .container {
     display: inline-block;

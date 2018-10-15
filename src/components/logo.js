@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 
 export const Logo = () => {
   return (
-    <div className="logo text-xs-center">
-      <Link to="/">Recipe Finder</Link>
+    <div className="logo text-center">
+      <Link to="/">
+        <b>YUM</b>Recipes
+      </Link>
     </div>
   );
 };

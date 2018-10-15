@@ -1,45 +1,20 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment } from "react";
 
-import { TrendingRecipes } from "./trending_recipes";
-
-export class RecipesHome extends Component {
-  state = {
-    isToggleOn: true,
-    showRecipes: false
-  };
-
-  handleClick(e) {
-    e.preventDefault();
-    this.setState(state => ({
-      isToggleOn: !state.isToggleOn,
-      showRecipes: !state.showRecipes
-    }));
-  }
-
-  render() {
-    const { isToggleOn, showRecipes } = this.state;
-    return (
-      <Fragment>
-        <div className="intro">
-          <h1>Recipe Finder</h1>
-          <p>Find all your favourite dish recipes in one place.</p>
-          <p>Enter your favourite dish or an ingredient name.</p>
-          <p>Click here to get latest Trending recipes</p>
-          <p>
-            {isToggleOn ? (
-              <button onClick={this.handleClick.bind(this)}>
-                <b>Show recipes</b>
-              </button>
-            ) : (
-              <button onClick={this.handleClick.bind(this)}>
-                <b>Hide recipes</b>
-              </button>
-            )}
-          </p>
-        </div>
-
-        {showRecipes && <TrendingRecipes />}
-      </Fragment>
-    );
-  }
-}
+export const RecipesHome = () => {
+  return (
+    <Fragment>
+      <div className="intro">
+        <h1>YumRecipes</h1>
+        <p>Find all your Yummy and healthy dish recipes in one place.</p>
+        <p>
+          Click{" "}
+          <button type="button" className="btn btn-success btn-sm">
+            <span>HealthAware</span>
+          </button>{" "}
+          sign for Nutrition information about your recipes.
+        </p>
+        <p>Enter your favourite dish or an ingredient name.</p>
+      </div>
+    </Fragment>
+  );
+};

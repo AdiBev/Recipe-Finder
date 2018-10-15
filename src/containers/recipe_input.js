@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-import { getRecipe } from "../actions/index";
+import { getRecipes } from "../actions/index";
 import { RecipesHome } from "../components/recipes_home";
 
 class RecipeInput extends Component {
@@ -19,12 +19,12 @@ class RecipeInput extends Component {
 
   onFormSubmit(event) {
     event.preventDefault();
-    this.props.getRecipe(this.state.term);
+    this.props.getRecipes(this.state.term);
     this.setState({ term: "" });
   }
 
   render() {
-    const { recipes, noRecipes } = this.props;
+    const { fetchRecipes, showWelcomeMsg } = this.props;
     return (
       <Fragment>
         <form onSubmit={this.onFormSubmit} className="input-group">
@@ -40,19 +40,18 @@ class RecipeInput extends Component {
             </button>
           </span>
         </form>
-        {!recipes &&
-          !noRecipes && <RecipesHome />}
+        {!showWelcomeMsg && <RecipesHome fetchRecipes={fetchRecipes}/>}
       </Fragment>
     );
   }
 }
 
-function mapStateToProps({ recipes, noRecipes }) {
-  return { recipes, noRecipes };
+function mapStateToProps({ loadRecipes }) {
+  return { loadRecipes };
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ getRecipe }, dispatch);
+  return bindActionCreators({ getRecipes }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(RecipeInput);

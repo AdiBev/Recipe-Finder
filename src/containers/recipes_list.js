@@ -3,22 +3,20 @@ import { connect } from "react-redux";
 
 import { ErrorHandlerRecipes } from "../components/errorHandler_recipes";
 import { Spinner } from "../components/spinner";
-import { Logo } from "../components/logo";
 import RecipeInput from "./recipe_input";
 
 class RecipesList extends Component {
+  state = { showWelcomeMsg: true };
   render() {
-    const { fetchRecipes, noRecipes } = this.props;
+    const { loadRecipes, noRecipes } = this.props;
+    const { showWelcomeMsg } = this.state;
     return (
       <div>
-        <Logo />
-        <RecipeInput {...this.state} />
-        {fetchRecipes && !noRecipes && <Spinner />}
+        <RecipeInput showWelcomeMsg={showWelcomeMsg} />
+        {loadRecipes && !noRecipes && <Spinner />}
 
         {noRecipes ? (
-          <div className="text-danger text-xs-center">
-            Sorry no recipes found!
-          </div>
+          <div className="text-danger text-center">Sorry no recipes found!</div>
         ) : (
           <ErrorHandlerRecipes {...this.props} />
         )}
@@ -27,8 +25,8 @@ class RecipesList extends Component {
   }
 }
 
-function mapStateToProps({ error, noRecipes, recipes, fetchRecipes }) {
-  return { error, noRecipes, recipes, fetchRecipes };
+function mapStateToProps({ error, noRecipes, recipes, loadRecipes }) {
+  return { error, noRecipes, recipes, loadRecipes };
 }
 
 export default connect(mapStateToProps)(RecipesList);

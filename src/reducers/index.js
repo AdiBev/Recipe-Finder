@@ -5,7 +5,7 @@ import NoRecipesReducer from "./reducer_noRecipes";
 import FetchRecipes from "./reducer_fetchRecipes";
 
 const rootReducer = combineReducers({
-  fetchRecipes: FetchRecipes,
+  loadRecipes: FetchRecipes,
   recipes: RecipeReducer,
   error: ErrorReducer,
   noRecipes: NoRecipesReducer

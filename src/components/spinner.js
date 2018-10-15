@@ -18,7 +18,7 @@ export const Spinner = () => {
         className={override}
         sizeUnit={"px"}
         size={25}
-        color={"#fffb98"}
+        color={"#ff9900"}
       />
     </div>
   );

@@ -1,8 +1,7 @@
 import axios from "axios";
 
-import { API_KEY, proxy1 } from "../config/config";
+import { app_id, app_key } from "../config/config";
 import history from "../history";
-const ROOT_URL = `https://food2fork.com/api/search?key=${API_KEY}`;
 
 export const FETCH_RECIPES = "FETCH_RECIPES";
 export const RECIEVE_RECIPES = "RECIEVE_RECIPES";
@@ -46,8 +45,10 @@ export function foundRecipes() {
 }
 
 //this is a redux-thunk
-export function getRecipe(ingredient) {
-  const url = `${proxy1}${ROOT_URL}&q=${ingredient}&count=50`;
+const ROOT_URL = `https://api.edamam.com/search?app_id=${app_id}&app_key=${app_key}`;
+
+export function getRecipes(ingredient) {
+  const url = `${ROOT_URL}&q=${ingredient}&from=0&to=50`;
   return dispatch => {
     dispatch(fetchRecipes());
     return axios
