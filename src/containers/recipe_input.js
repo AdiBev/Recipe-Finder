@@ -24,7 +24,7 @@ class RecipeInput extends Component {
   }
 
   render() {
-    const { fetchRecipes, showWelcomeMsg } = this.props;
+    const { showWelcomeMsg } = this.props;
     return (
       <Fragment>
         <form onSubmit={this.onFormSubmit} className="input-group">
@@ -40,18 +40,14 @@ class RecipeInput extends Component {
             </button>
           </span>
         </form>
-        {!showWelcomeMsg && <RecipesHome fetchRecipes={fetchRecipes}/>}
+        {!showWelcomeMsg && <RecipesHome showWelcomeMsg={showWelcomeMsg} />}
       </Fragment>
     );
   }
-}
-
-function mapStateToProps({ loadRecipes }) {
-  return { loadRecipes };
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ getRecipes }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RecipeInput);
+export default connect(null, mapDispatchToProps)(RecipeInput);

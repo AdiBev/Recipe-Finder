@@ -1,17 +1,15 @@
 import React, { Fragment } from "react";
 
+import { NutriFactsButton } from "./nutriFactsButton";
+
 export const RecipesHome = () => {
   return (
     <Fragment>
       <div className="intro">
-        <h1>YumRecipes</h1>
         <p>Find all your Yummy and healthy dish recipes in one place.</p>
         <p>
-          Click{" "}
-          <button type="button" className="btn btn-success btn-sm">
-            <span>HealthAware</span>
-          </button>{" "}
-          sign for Nutrition information about your recipes.
+          {" "}
+          Click <NutriFactsButton /> sign for Nutrition information.
         </p>
         <p>Enter your favourite dish or an ingredient name.</p>
       </div>

@@ -1,7 +1,8 @@
 import React from "react";
 
-//showRecipes is just a arrow function
+import { NutriFactsButton } from "./nutriFactsButton";
 
+//showRecipes is just a arrow function
 export const showRecipes = recipeData => {
   if (recipeData.error === "limit") {
     return (
@@ -48,11 +49,8 @@ export const showRecipes = recipeData => {
                 </div>
                 <div>
                   <p>
-                    <button type="button" className="btn btn-success btn-sm">
-                      <a href={shareAs} target="_blank" className="text-light">
-                        HealthAware
-                      </a>
-                    </button>
+                    {" "}
+                    <NutriFactsButton shareAs={shareAs} />{" "}
                   </p>
                   <p className="badge badge-primary ml-1">
                     {recipesDetail.recipe.yield} servings

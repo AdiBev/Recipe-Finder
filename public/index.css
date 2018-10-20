@@ -24,6 +24,10 @@ h3 {
   font-size: 1.2rem;
 }
 
+.badge {
+  font-weight: normal;
+}
+
 /* Images styles */
 .img-fluid {
   max-width: 80%;
@@ -64,6 +68,30 @@ input[type="text"] {
   font-family: "Pacifico", cursive;
 }
 
+/*  edamam badge styles */
+#edamam-badge {
+  text-align: center;
+}
+
+/* NutriFacts button style */
+.nutriFacts {
+  background-image: linear-gradient(
+    to right,
+    #fbc2eb 0%,
+    #a6c1ee 51%,
+    #fbc2eb 100%
+  );
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: #0634ab;
+}
+.nutriFacts:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+.nutriFacts a {
+  text-decoration: none;
+  color: #0634ab;
+}
 /* Media queries */
 @media only screen and (min-width: 800px) {
   .container {
@@ -74,13 +102,6 @@ input[type="text"] {
     left: 100px;
   }
 }
-
-/*  edamam badge styles */
-#edamam-badge {
-  text-align: center;
-}
-
-/*Media queries */
 @media only screen and (min-width: 500px) and (max-width: 799px) {
   .container {
     display: inline-block;
@@ -90,7 +111,6 @@ input[type="text"] {
     left: 50px;
   }
 }
-
 @media only screen and (max-width: 499px) {
   .container {
     width: 70%;

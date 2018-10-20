@@ -4,6 +4,7 @@ import history from "../history";
 
 import RecipeInput from "../containers/recipe_input";
 import RecipesList from "../containers/recipes_list";
+import Spinner from "../containers/spinner.js";
 import { Logo } from "./logo";
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
         <Router history={history}>
           <div>
             <Logo />
+            <Spinner />
 
             <Switch>
               <Route exact path="/" component={RecipeInput} />
@@ -25,9 +27,9 @@ class App extends Component {
                 )}
               />
             </Switch>
-            <div id="edamam-badge" dataColor="white" />
           </div>
         </Router>
+        <div id="edamam-badge" datacolor="white" />
       </div>
     );
   }
