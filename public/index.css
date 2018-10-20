@@ -25,7 +25,7 @@ h3 {
 }
 
 .badge {
-  font-weight: normal;
+  font-weight: normal !important;
 }
 
 /* Images styles */
@@ -80,13 +80,13 @@ input[type="text"] {
     #fbc2eb 0%,
     #a6c1ee 51%,
     #fbc2eb 100%
-  );
-  transition: 0.5s;
-  background-size: 200% auto;
+  ) !important;
+  transition: 0.5 !important;
+  background-size: 200% auto !important;
   color: #0634ab;
 }
 .nutriFacts:hover {
-  background-position: right center; /* change the direction of the change here */
+  background-position: right center !important; /* change the direction of the change here */
 }
 .nutriFacts a {
   text-decoration: none;

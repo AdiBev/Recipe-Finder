@@ -10,6 +10,7 @@ const override = css`
   border-color: red;
   margin-top: 30px;
   position: relative;
+  bottom: 10px;
 `;
 
 export const Spinner = ({ loadRecipes }) => {
@@ -19,7 +20,7 @@ export const Spinner = ({ loadRecipes }) => {
         <PacmanLoader
           className={override}
           sizeUnit={"px"}
-          size={25}
+          size={20}
           color={"#ff9900"}
         />
       )}
