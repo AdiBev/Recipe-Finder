@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import { css } from "react-emotion";
 import { PacmanLoader } from "react-spinners";
@@ -13,10 +14,10 @@ const override = css`
   bottom: 10px;
 `;
 
-export const Spinner = ({ loadRecipes }) => {
+export const Spinner = ({ loadRecipes, noRecipes }) => {
   return (
     <div>
-      {loadRecipes && (
+      {loadRecipes && !noRecipes && (
         <PacmanLoader
           className={override}
           sizeUnit={"px"}
@@ -28,8 +29,13 @@ export const Spinner = ({ loadRecipes }) => {
   );
 };
 
-function mapStateToProps({ loadRecipes }) {
-  return { loadRecipes };
+Spinner.propTypes = {
+  loadRecipes: PropTypes.bool.isRequired,
+  noRecipes: PropTypes.bool.isRequired
+};
+
+function mapStateToProps({ loadRecipes, noRecipes }) {
+  return { loadRecipes, noRecipes };
 }
 
 export default connect(mapStateToProps)(Spinner);

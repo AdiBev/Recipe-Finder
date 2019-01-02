@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import PropTypes from "prop-types";
 
 import { getRecipes } from "../actions/index";
 import { RecipesHome } from "../components/recipes_home";
@@ -33,6 +34,7 @@ class RecipeInput extends Component {
             className="form-control input-sm"
             value={this.state.term}
             onChange={this.onInputChange}
+            required
           />
           <span className="input-group-btn">
             <button type="submit" className="btn btn-secondary">
@@ -50,4 +52,12 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ getRecipes }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(RecipeInput);
+RecipeInput.propTypes = {
+  getRecipes: PropTypes.func.isRequired,
+  showWelcomeMsg: PropTypes.bool
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(RecipeInput);
