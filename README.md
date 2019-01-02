@@ -1,6 +1,6 @@
 # YUMRecipes
 
-A React recipe app where you can find all varities of dishes recipes. It gathers data from [Edamam] (https://www.edamam.com/), via their api.
+A React recipe app where you can find all varities of dishes recipes. It gathers data from [Edamam](https://www.edamam.com), via their api.
 
 ## Features
 * Simple design
@@ -14,4 +14,4 @@ A React recipe app where you can find all varities of dishes recipes. It gathers
 # Contribution
 If you have any ideas or suggestions please get in touch with me.
 
-The recipe data is provided by  [Edamam] (https://www.edamam.com/).
+The recipe data is provided by  [Edamam](https://www.edamam.com/).
