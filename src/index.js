@@ -1,6 +1,3 @@
-//$r.store.getState(); type in console
-//to view the redux store
-
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
@@ -22,7 +19,6 @@ const reduxStore = createStore(
   composeEnhancers(applyMiddleware(ReduxThunk))
 );
 
-/*const createStoreWithMiddleware = applyMiddleware(ReduxThunk)(createStore);*/
 ReactDOM.render(
   <Provider store={reduxStore}>
     <App />
