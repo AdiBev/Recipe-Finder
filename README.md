@@ -16,8 +16,4 @@ A React recipe app where you can find all varities of dishes recipes. It gathers
 
 If you have any ideas or suggestions please get in touch with me.
 
-### To view the source code on ZEIT
-
-[YumRecipes](https://zeit.co/adibev/yumrecipes/dcy4ng3yb/source)
-
 The recipe data is provided by [Edamam](https://www.edamam.com/).
