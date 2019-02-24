@@ -5,7 +5,7 @@ export const NutriFactsButton = props => {
     <Fragment>
       {!props.showWelcomeMsg ? (
         <button type="button" className="btn btn-sm nutriFacts">
-          <a href={props.shareAs} target="_blank">
+          <a href={props.shareAs} target="_blank" rel="noopener noreferrer">
             NutriFacts
           </a>
         </button>

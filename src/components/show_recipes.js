@@ -27,7 +27,7 @@ export const showRecipes = recipeData => {
         <div className="container template" key={shareAs}>
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <a href={url} target="_blank">
+              <a href={url} target="_blank" rel="noopener noreferrer">
                 <img
                   src={image}
                   className="mx-auto d-block img-fluid img-thumbnail"
